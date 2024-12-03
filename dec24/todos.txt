@@ -1,0 +1,57 @@
+Crawler 
+Dữ liệu về hành vi mua sắm có thể crawler public:
+Số lượt xem sản phẩm (một số trang web có)
+Số lượt mua sản phẩm (một số trang web có)
+Crawler về các thông tin khuyến mãi
+Danh sách sản phẩm phổ biến (best sellers - các mặt hàng bán chạy nhất)
+Các đánh giá của khách hàng về sản phẩm (số lượt đánh giá và điểm đánh giá trung bình)
+Crawl dữ liệu từ các trang hoanghamobile, cellphones, ... Khoảng 10 trang web crawl về sản phẩm công nghệ ở VN 
+
+Target vào các sản phẩm công nghệ: phân loại theo phân khúc giá, chia ra làm 3 phân khúc giá và 2 loại sản phẩm 
+Có thể phân chia theo danh mục
+Loại sản phẩm ở đây: laptop, smartphone (laptop và smartphone gộp lại làm 1) và phụ kiện 
+Phân khúc giá gồm dưới 10M, từ 10 đến 20M và trên 20M 
+
+Sử dụng cloudscraper để crawl (để crawler nhanh chóng 10 trang thì có thể sử dụng đa luồng)
+Sử dụng apschedule lập lịch cho 10 phút gọi lại một lần (gọi hàm có thể sử dụng subprocess để chạy cho crawl mỗi trang web khác nhau)
+Muốn dữ liệu thời gian thực thì 10p gọi crawler lại một lần và so với dữ liệu trong cơ sở dữ liệu nếu có thay đổi thì cập nhật lại 
+Về trang web dựng bằng flask thì 10p gọi lại dữ liệu trong database để phân tích lại và hiển thị lên biểu đồ cũng như model phân tích 
+
+Sử dụng cloudscaper để crawler 
+
+Số lượt xem không có data thì fake bằng tỉ lệ chuyển đổi 1% - 2% so với nhóm ngành công nghệ => lấy số lượt review nhân từ 50 đến 100 lần
+(chọn nhân 75 lần so với lượt review)
+Số lượt mua = số lượt review (Không có dữ liệu thực tế nên phải vậy)
+Data dạng:
+
+Tên sản phẩm (ví dụ laptop, ip, tai nghe)
+Phân khúc (dưới 10, từ 10 đến 20, trên 20)
+Danh mục (loại sản phẩm (Laptop & Phone hoặc là Phụ kiện))
+Số lượt xem 
+Số lượt đánh giá 
+Số lượt mua 
+Điểm trung bình đánh giá 
+Khuyến mãi (bao nhiêu %)
+is_featured: có phải sản phẩm phổ biến, nổi bật không (best seller) - có 2 giá trị, 1 là có, 0 là không 
+is_sale sản phẩm sale (1 và 0)
+
+product info: một vài tính năng của sản phẩm mà người dùng thích ví dụ có thể chip với smart phone và laptop, camera 
+Đối với phụ kiện thì bàn phím cơ có gì đặc biệt, tai nghe cũng v
+ 
+Nguồn (link sản phẩm)
+Web (link trang web)
+Thời gian cập nhật 
+
+
+Tổng hợp từ 10 website và phân tích dữ liệu -> chọn một mô hình để tạo model, hiển thị kết quả mô hình và kết quả trực quan hóa dữ liệu lên web 
+(sử dụng seaborn và plotly cho biểu đồ động)
+-> đưa ra chiến lược (marketing) (đoạn này chatGPT)
+
+Sử dụng apschedule lập lịch 10 phút để chạy subprocess để crawl (hoặc đa luồng)
+So sánh với dữ liệu đã có trong database và lưu vào database (nếu dữ liệu thay đổi thì lưu vào database) chỉ so lượt xem, lượt đánh giá, lượt mua
+thay đổi thì lưu 
+
+Ở trên phần flask thì đọc dữ liệu từ database, và trả dữ liệu về dạng json (dữ liệu trực quan hóa)
+Mô hình có thể sử dụng mô hình tuyến tính và dữ liệu cũng trả về dạng json 
+client fetch api json và hiển thị lên giao diện 
+

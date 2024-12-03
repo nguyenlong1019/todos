@@ -1,0 +1,57 @@
+Dựng data về hành vi mua sắm của khách, sau đó phân tích và đưa ra chiến lược marketing. 
+Code python sử dụng flask để hiển thị, database postgreSQL, update dữ liệu thời gian thực.
+Crawler data từ các web.
+
+Target vào một nhóm trang web cố định để lấy dữ liệu 
+
+Data full tiếng Việt 
+
+Các nguồn dữ liệu cần cho phân tích hành vi:
+Lịch sử mua sắm: thông tin về sản phẩm đã mua, số lượng mua, thời gian và tần suất mua, giá trị đơn hàng 
+Hành vi trên website: số lượng truy cập, thời gian ở lại, dữ liệu cá nhân (độ tuổi, giới tính, địa điểm)
+
+Xử lý dữ liệu:
+Làm sạch dữ liệu: 
+Loại bỏ dữ liệu trùng lặp, sai lệch hoặc không đầy đủ.
+Chuẩn hóa định dạng (thời gian, số liệu).
+
+Phân loại dữ liệu: 
+Chia dữ liệu theo nhóm (nhóm khách hàng, loại sản phẩm, v.v.).
+Gán nhãn hành vi như "khách hàng thường xuyên", "khách hàng mới".
+
+Kết hợp dữ liệu:
+Tích hợp dữ liệu từ nhiều nguồn để có cái nhìn toàn diện.
+
+
+Phân tích và mô hình hóa dữ liệu:
+Phân tích mô tả:
+Xác định hành vi phổ biến như tần suất mua hàng, sản phẩm được ưa chuộng.
+Tìm hiểu thời gian cao điểm mua sắm.
+
+Phân tích dự đoán:
+Xây dựng các mô hình Machine Learning:
+Clustering (K-means) để phân nhóm khách hàng.
+Collaborative Filtering để gợi ý sản phẩm.
+Regression để dự đoán giá trị đơn hàng trung bình.
+
+Phân tích cảm xúc:
+Từ đánh giá sản phẩm, phân loại cảm xúc tích cực, tiêu cực.
+
+Trực quan hóa dữ liệu: sử dụng python và matplotlib, seaborn, plotly,
+Hiển thị biểu đồ xu hướng, heatmap hành vi.
+
+Dữ liệu về hành vi mua sắm có thể crawler public:
+Số lượt xem sản phẩm (một số trang web có)
+Số lượt mua sản phẩm (một số trang web có)
+Crawler về các thông tin khuyến mãi
+Danh sách sản phẩm phổ biến (best sellers - các mặt hàng bán chạy nhất)
+Các đánh giá của khách hàng về sản phẩm (số lượt đánh giá và điểm đánh giá trung bình)
+Crawl dữ liệu từ các trang hoanghamobile, cellphones, ... Khoảng 10 trang web crawl về sản phẩm công nghệ ở VN 
+
+Target vào các sản phẩm công nghệ: phân loại theo phân khúc giá, chia ra làm 3 phân khúc giá và 2 loại sản phẩm 
+Có thể phân chia theo danh mục
+Loại sản phẩm ở đây: laptop, smartphone (laptop và smartphone gộp lại làm 1) và phụ kiện 
+Phân khúc giá gồm dưới 10M, từ 10 đến 20M và trên 20M 
+
+
+undetected-chromedriver
